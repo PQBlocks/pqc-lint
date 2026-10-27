@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0.0",
+  "suite": "pqblocks-lint-pqc-static-analysis-benchmark-corpus",
+  "instances": [
+    {
+      "id": "INST-01-RSA-DIRECT",
+      "path": "instance_01_classical_rsa.py",
+      "category": "direct_classical_vulnerability",
+      "primary_algorithm": "RSA-2048",
+      "ground_truth_verdict": "NON_COMPLIANT_VULNERABLE",
+      "nist_quantum_security_level": 0,
+      "shor_vulnerable": true,
+      "cnsa_2_0_status": "EXCLUDED",
+      "fips_140_3_status": "SUNSET_HISTORICAL",
+      "expected_flow": {
+        "source": "rsa.generate_private_key",
+        "sink": "public_key.encrypt",
+        "hops": 1
+      },
+      "cyclonedx_golden_fixture": "golden_cbom_instance_01.json"
+    },
+    {
+      "id": "INST-02-ALIASED-IMPORT",
+      "path": "instance_02_aliased_import.py",
+      "category": "aliasing_evasion",
+      "primary_algorithm": "RSA-3072",
+      "ground_truth_verdict": "NON_COMPLIANT_VULNERABLE",
+      "nist_quantum_security_level": 0,
+      "shor_vulnerable": true,
+      "cnsa_2_0_status": "EXCLUDED",
+      "expected_flow": {
+        "source": "secret_asym_engine.generate_private_key",
+        "sink": "cipher.encrypt",
+        "hops": 2,
+        "aliased_identifiers": ["secret_asym_engine", "cipher_factory", "active_key"]
+      },
+      "naive_ast_detection": false,
+      "data_flow_detection": true
+    },
+    {
+      "id": "INST-03-INTERPROCEDURAL-ECDSA",
+      "path": "instance_03_interprocedural_flow.py",
+      "category": "interprocedural_data_flow",
+      "primary_algorithm": "ECDSA-SECP256R1-SHA256",
+      "ground_truth_verdict": "NON_COMPLIANT_VULNERABLE",
+      "nist_quantum_security_level": 0,
+      "shor_vulnerable": true,
+      "cnsa_2_0_status": "EXCLUDED",
+      "expected_flow": {
+        "source": "KeyVaultManager.provision_identity_key",
+        "intermediate": "SessionChannelContext.bind_credentials",
+        "sink": "NetworkTokenSigner.sign_dispatch_packet",
+        "hops": 3
+      },
+      "naive_ast_detection": false,
+      "data_flow_detection": true
+    },
+    {
+      "id": "INST-04-HYBRID-MLKEM-X25519",
+      "path": "instance_04_pqc_mlkem_hybrid.py",
+      "category": "quantum_safe_hybrid_envelope",
+      "primary_algorithm": "HYBRID-X25519-ML-KEM-768",
+      "ground_truth_verdict": "COMPLIANT_QUANTUM_SAFE",
+      "nist_quantum_security_level": 3,
+      "shor_vulnerable": false,
+      "cnsa_2_0_status": "COMPLIANT",
+      "standard_basis": "NIST SP 800-56C Rev 2 (Equation 1, Z_prime = Z || T)",
+      "expected_flow": {
+        "pqc_kem": "ML-KEM-768",
+        "classical_kex": "X25519",
+        "kdf": "HKDF-SHA256",
+        "symmetric_sink": "AES-256-GCM"
+      },
+      "cyclonedx_golden_fixture": "golden_cbom_instance_04.json"
+    },
+    {
+      "id": "INST-05-MOCK-TEST-FIXTURE",
+      "path": "instance_05_mock_test_vector.py",
+      "category": "false_positive_suppression",
+      "primary_algorithm": "RSA-1024-TEST-FIXTURE",
+      "ground_truth_verdict": "BENIGN_TEST_CODE",
+      "nist_quantum_security_level": 0,
+      "shor_vulnerable": true,
+      "production_impact": false,
+      "expected_handling": "TAG_AS_TEST_SCOPE_DO_NOT_BREAK_BUILD"
+    }
+  ]
+}

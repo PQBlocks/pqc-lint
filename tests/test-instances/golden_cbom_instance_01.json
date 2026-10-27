@@ -1,0 +1,58 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:8b1390d4-1a3b-4876-9c44-78fa216bb001",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-24T14:30:00Z",
+    "tools": [
+      {
+        "vendor": "PQBlocks",
+        "name": "pqblocks_lint",
+        "version": "0.1.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "name": "instance-01-classical-rsa",
+      "version": "1.0.0"
+    }
+  },
+  "components": [
+    {
+      "type": "cryptographic-asset",
+      "name": "RSA-2048-OAEP-SHA256",
+      "bom-ref": "crypto-asset-rsa-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "public-key-encryption",
+          "parameterSetIdentifier": "2048",
+          "executionEnvironment": "software-plain",
+          "implementationPlatform": "cpython",
+          "cryptoFunctions": ["encrypt", "decrypt", "keygen"],
+          "classicalSecurityLevel": 112,
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.1.1.7",
+        "detectionContext": {
+          "sourceFile": "instance_01_classical_rsa.py",
+          "sourceLine": 12,
+          "sinkLine": 20,
+          "flowHops": 1,
+          "shorVulnerable": true,
+          "cnsa20Compliant": false,
+          "fips1403Status": "SUNSET_HISTORICAL"
+        }
+      }
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "instance-01-classical-rsa",
+      "dependsOn": [
+        "crypto-asset-rsa-2048"
+      ]
+    }
+  ]
+}

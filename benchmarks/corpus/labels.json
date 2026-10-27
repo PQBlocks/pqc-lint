@@ -1,0 +1,69 @@
+{
+ "incumbent": "qproof 0.4.0 (PyPI, https://pypi.org/project/qproof/0.4.0/)",
+ "files": {
+  "golden/instance_01_classical_rsa.py": {
+   "flagged": true,
+   "note": "RSA-2048 key generation and OAEP encryption"
+  },
+  "golden/instance_02_aliased_import.py": {
+   "flagged": true,
+   "note": "RSA-3072 behind aliased names"
+  },
+  "golden/instance_03_interprocedural_flow.py": {
+   "flagged": true,
+   "note": "ECDSA P-256 key passed across three classes"
+  },
+  "golden/instance_04_pqc_mlkem_hybrid.py": {
+   "flagged": true,
+   "note": "X25519 plus a mock KEM built on os.urandom (no real ML-KEM API); X25519 is Shor-vulnerable"
+  },
+  "golden/instance_05_mock_test_vector.py": {
+   "flagged": false,
+   "note": "RSA-1024 test vector inside a pytest test class; labelled benign test code"
+  },
+  "probes/aesgcm_only.py": {
+   "flagged": false,
+   "note": "AES-256-GCM only"
+  },
+  "probes/hash_only.py": {
+   "flagged": false,
+   "note": "SHA-256 hashing only"
+  },
+  "probes/rsa_sign.py": {
+   "flagged": true,
+   "note": "RSA-2048 PSS signature at module level"
+  },
+  "probes/nested_rsa.py": {
+   "flagged": true,
+   "note": "RSA-4096 key generated inside a method"
+  },
+  "probes/ecdh_p256.py": {
+   "flagged": true,
+   "note": "ECDH over P-256"
+  },
+  "probes/ed25519_sign.py": {
+   "flagged": true,
+   "note": "Ed25519 signature"
+  },
+  "probes/pycryptodome_rsa.py": {
+   "flagged": true,
+   "note": "RSA-2048 with PyCryptodome PKCS1_OAEP"
+  },
+  "probes/rsa_plus_encap_name.py": {
+   "flagged": true,
+   "note": "RSA-2048 OAEP plus an unrelated function named encapsulate_header (defined, not called)"
+  },
+  "probes/billing.py": {
+   "flagged": true,
+   "note": "RSA-2048 OAEP plus a call to an unrelated function named encapsulate_header"
+  },
+  "probes/attestation.py": {
+   "flagged": true,
+   "note": "production RSA-2048 OAEP in a file whose name contains 'test'"
+  },
+  "probes/latest_keys.py": {
+   "flagged": true,
+   "note": "production RSA-2048 key generation in a file whose name contains 'test'"
+  }
+ }
+}

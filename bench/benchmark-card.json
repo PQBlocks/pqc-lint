@@ -1,0 +1,275 @@
+{
+  "baselines": {
+    "cp-sat": {
+      "instances_run": 5,
+      "optimality_gap": 0.0,
+      "sampler": "cp-sat",
+      "tto_ns": 2341295,
+      "tto_seconds": 0.002341,
+      "wall_time_ns": 2341295
+    },
+    "dwave-neal": {
+      "instances_run": 5,
+      "optimality_gap": 0.0,
+      "sampler": "dwave-neal",
+      "tto_ns": 4325700,
+      "tto_seconds": 0.004326,
+      "wall_time_ns": 4325700
+    },
+    "mqlib": {
+      "error": "MQLib not installed",
+      "instances_run": 0,
+      "optimality_gap": 0.0,
+      "tto_ns": 0,
+      "unavailable": true,
+      "wall_time_ns": 0
+    },
+    "openjij": {
+      "instances_run": 5,
+      "optimality_gap": 0.0,
+      "sampler": "openjij",
+      "tto_ns": 11112785,
+      "tto_seconds": 0.011113,
+      "wall_time_ns": 11112785
+    }
+  },
+  "instances": [
+    {
+      "baseline_results": {
+        "cp-sat": {
+          "cp_status": "CpSolverStatus.OPTIMAL",
+          "energy": -8.0,
+          "objective_value": 8.0,
+          "sampler": "CpModel",
+          "tto_ns": 2399172,
+          "wall_time_ns": 2399172
+        },
+        "dwave-neal": {
+          "energy": -8.0,
+          "objective_value": 8.0,
+          "sampler": "SimulatedAnnealingSampler",
+          "tto_ns": 4369467,
+          "wall_time_ns": 4369467
+        },
+        "mqlib": {
+          "energy": 0.0,
+          "error": "MQLib not installed in environment",
+          "objective_value": 0.0,
+          "sampler": "MQLib",
+          "tto_ns": 0,
+          "unavailable": true,
+          "wall_time_ns": 0
+        },
+        "openjij": {
+          "energy": -8.0,
+          "objective_value": 8.0,
+          "sampler": "SASampler",
+          "tto_ns": 10603476,
+          "wall_time_ns": 10603476
+        }
+      },
+      "instance_id": "INST-01-RSA-DIRECT",
+      "optimality_gaps": {
+        "cp-sat": 0.0,
+        "dwave-neal": 0.0,
+        "mqlib": 0.0,
+        "openjij": 0.0
+      },
+      "path": "instance_01_classical_rsa.py"
+    },
+    {
+      "baseline_results": {
+        "cp-sat": {
+          "cp_status": "CpSolverStatus.OPTIMAL",
+          "energy": -8.0,
+          "objective_value": 8.0,
+          "sampler": "CpModel",
+          "tto_ns": 2278838,
+          "wall_time_ns": 2278838
+        },
+        "dwave-neal": {
+          "energy": -8.0,
+          "objective_value": 8.0,
+          "sampler": "SimulatedAnnealingSampler",
+          "tto_ns": 4746028,
+          "wall_time_ns": 4746028
+        },
+        "mqlib": {
+          "energy": 0.0,
+          "error": "MQLib not installed in environment",
+          "objective_value": 0.0,
+          "sampler": "MQLib",
+          "tto_ns": 0,
+          "unavailable": true,
+          "wall_time_ns": 0
+        },
+        "openjij": {
+          "energy": -8.0,
+          "objective_value": 8.0,
+          "sampler": "SASampler",
+          "tto_ns": 10950595,
+          "wall_time_ns": 10950595
+        }
+      },
+      "instance_id": "INST-02-ALIASED-IMPORT",
+      "optimality_gaps": {
+        "cp-sat": 0.0,
+        "dwave-neal": 0.0,
+        "mqlib": 0.0,
+        "openjij": 0.0
+      },
+      "path": "instance_02_aliased_import.py"
+    },
+    {
+      "baseline_results": {
+        "cp-sat": {
+          "cp_status": "CpSolverStatus.OPTIMAL",
+          "energy": -8.0,
+          "objective_value": 8.0,
+          "sampler": "CpModel",
+          "tto_ns": 2553276,
+          "wall_time_ns": 2553276
+        },
+        "dwave-neal": {
+          "energy": -8.0,
+          "objective_value": 8.0,
+          "sampler": "SimulatedAnnealingSampler",
+          "tto_ns": 4015691,
+          "wall_time_ns": 4015691
+        },
+        "mqlib": {
+          "energy": 0.0,
+          "error": "MQLib not installed in environment",
+          "objective_value": 0.0,
+          "sampler": "MQLib",
+          "tto_ns": 0,
+          "unavailable": true,
+          "wall_time_ns": 0
+        },
+        "openjij": {
+          "energy": -8.0,
+          "objective_value": 8.0,
+          "sampler": "SASampler",
+          "tto_ns": 11752591,
+          "wall_time_ns": 11752591
+        }
+      },
+      "instance_id": "INST-03-INTERPROCEDURAL-ECDSA",
+      "optimality_gaps": {
+        "cp-sat": 0.0,
+        "dwave-neal": 0.0,
+        "mqlib": 0.0,
+        "openjij": 0.0
+      },
+      "path": "instance_03_interprocedural_flow.py"
+    },
+    {
+      "baseline_results": {
+        "cp-sat": {
+          "cp_status": "CpSolverStatus.OPTIMAL",
+          "energy": -8.0,
+          "objective_value": 8.0,
+          "sampler": "CpModel",
+          "tto_ns": 2201858,
+          "wall_time_ns": 2201858
+        },
+        "dwave-neal": {
+          "energy": -8.0,
+          "objective_value": 8.0,
+          "sampler": "SimulatedAnnealingSampler",
+          "tto_ns": 4046996,
+          "wall_time_ns": 4046996
+        },
+        "mqlib": {
+          "energy": 0.0,
+          "error": "MQLib not installed in environment",
+          "objective_value": 0.0,
+          "sampler": "MQLib",
+          "tto_ns": 0,
+          "unavailable": true,
+          "wall_time_ns": 0
+        },
+        "openjij": {
+          "energy": -8.0,
+          "objective_value": 8.0,
+          "sampler": "SASampler",
+          "tto_ns": 11395513,
+          "wall_time_ns": 11395513
+        }
+      },
+      "instance_id": "INST-04-HYBRID-MLKEM-X25519",
+      "optimality_gaps": {
+        "cp-sat": 0.0,
+        "dwave-neal": 0.0,
+        "mqlib": 0.0,
+        "openjij": 0.0
+      },
+      "path": "instance_04_pqc_mlkem_hybrid.py"
+    },
+    {
+      "baseline_results": {
+        "cp-sat": {
+          "cp_status": "CpSolverStatus.OPTIMAL",
+          "energy": -8.0,
+          "objective_value": 8.0,
+          "sampler": "CpModel",
+          "tto_ns": 2273332,
+          "wall_time_ns": 2273332
+        },
+        "dwave-neal": {
+          "energy": -8.0,
+          "objective_value": 8.0,
+          "sampler": "SimulatedAnnealingSampler",
+          "tto_ns": 4450318,
+          "wall_time_ns": 4450318
+        },
+        "mqlib": {
+          "energy": 0.0,
+          "error": "MQLib not installed in environment",
+          "objective_value": 0.0,
+          "sampler": "MQLib",
+          "tto_ns": 0,
+          "unavailable": true,
+          "wall_time_ns": 0
+        },
+        "openjij": {
+          "energy": -8.0,
+          "objective_value": 8.0,
+          "sampler": "SASampler",
+          "tto_ns": 10861753,
+          "wall_time_ns": 10861753
+        }
+      },
+      "instance_id": "INST-05-MOCK-TEST-FIXTURE",
+      "optimality_gaps": {
+        "cp-sat": 0.0,
+        "dwave-neal": 0.0,
+        "mqlib": 0.0,
+        "openjij": 0.0
+      },
+      "path": "instance_05_mock_test_vector.py"
+    }
+  ],
+  "ks_tests": {
+    "dwave-neal_vs_cp-sat": {
+      "p_value": 0.007937,
+      "statistic": 1.0
+    },
+    "dwave-neal_vs_openjij": {
+      "p_value": 0.007937,
+      "statistic": 1.0
+    },
+    "openjij_vs_cp-sat": {
+      "p_value": 0.007937,
+      "statistic": 1.0
+    }
+  },
+  "summary": {
+    "seed": 1,
+    "timestamp": "2026-01-01T00:00:01Z",
+    "total_baselines": 4,
+    "total_instances": 5,
+    "wall_seconds": 0.095273
+  },
+  "wall_seconds": 0.095273
+}

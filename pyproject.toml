@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pqblocks-lint"
+version = "0.1.0"
+description = "Static analysis for Python source that finds classical and post-quantum cryptographic primitives with a source-to-sink taint pass and reports them as a CycloneDX 1.6 CBOM or a SARIF 2.1.0 log."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+requires-python = ">=3.11"
+authors = [{name = "The PQBlocks Authors"}]
+keywords = ["cbom", "cyclonedx", "sarif", "static-analysis", "post-quantum", "pqc", "cryptography-inventory", "taint-analysis"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security :: Cryptography",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = ["dwave-neal", "networkx", "numpy", "openjij", "ortools", "scipy"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+pqblocks-lint = "pqblocks_lint.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/PQBlocks/pqc-lint"
+Documentation = "https://github.com/PQBlocks/pqc-lint#readme"
+Source = "https://github.com/PQBlocks/pqc-lint"
+Changelog = "https://github.com/PQBlocks/pqc-lint/blob/main/CHANGELOG.md"
+Issues = "https://github.com/PQBlocks/pqc-lint/issues"
+Security = "https://github.com/PQBlocks/pqc-lint/security/policy"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

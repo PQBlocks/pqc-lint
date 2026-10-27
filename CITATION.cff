@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "pqblocks-lint"
+version: "0.1.0"
+license: Apache-2.0
+repository-code: "https://github.com/PQBlocks/pqc-lint"
+authors:
+  - name: "The PQBlocks Authors"
+keywords:
+  - cbom
+  - cyclonedx
+  - sarif
+  - static-analysis
+  - post-quantum
+  - pqc
+  - cryptography-inventory
+  - taint-analysis
+abstract: "Static analysis for Python source that finds classical and post-quantum cryptographic primitives with a source-to-sink taint pass and reports them as a CycloneDX 1.6 CBOM or a SARIF 2.1.0 log."

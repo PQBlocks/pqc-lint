@@ -1,0 +1,96 @@
+{
+ "golden_timing": [
+  {
+   "all_correct": true,
+   "expected": "NON_COMPLIANT_VULNERABLE",
+   "file": "instance_01_classical_rsa.py",
+   "median_ns": 871319,
+   "runs": 10
+  },
+  {
+   "all_correct": true,
+   "expected": "NON_COMPLIANT_VULNERABLE",
+   "file": "instance_02_aliased_import.py",
+   "median_ns": 1103022,
+   "runs": 10
+  },
+  {
+   "all_correct": true,
+   "expected": "NON_COMPLIANT_VULNERABLE",
+   "file": "instance_03_interprocedural_flow.py",
+   "median_ns": 1772247,
+   "runs": 10
+  },
+  {
+   "all_correct": true,
+   "expected": "COMPLIANT_QUANTUM_SAFE",
+   "file": "instance_04_pqc_mlkem_hybrid.py",
+   "median_ns": 1476522,
+   "runs": 10
+  },
+  {
+   "all_correct": true,
+   "expected": "BENIGN_TEST_CODE",
+   "file": "instance_05_mock_test_vector.py",
+   "median_ns": 452547,
+   "runs": 10
+  }
+ ],
+ "hardware": {
+  "cpu_model": "Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz",
+  "governor": "powersave",
+  "governor_pinned": false,
+  "platform": "Linux-7.2.6-1-cachyos-x86_64-with-glibc2.44",
+  "python": "3.14.7",
+  "ram": "23Gi",
+  "solver_versions": {
+   "neal": "0.6.0",
+   "networkx": "3.6.1",
+   "numpy": "2.5.3",
+   "openjij": "installed-no-version-attr",
+   "ortool": "import-failed: No module named 'ortool'",
+   "ortools": "9.15.6755",
+   "scipy": "1.18.1"
+  },
+  "threads": "8"
+ },
+ "loc_scaling": [
+  {
+   "deterministic": true,
+   "loc": 38,
+   "median_ns": 827712,
+   "mult": 1,
+   "verdict_ok": true
+  },
+  {
+   "deterministic": true,
+   "loc": 76,
+   "median_ns": 1310113,
+   "mult": 2,
+   "verdict_ok": true
+  },
+  {
+   "deterministic": true,
+   "loc": 152,
+   "median_ns": 2280407,
+   "mult": 4,
+   "verdict_ok": true
+  },
+  {
+   "deterministic": true,
+   "loc": 304,
+   "median_ns": 4328643,
+   "mult": 8,
+   "verdict_ok": true
+  },
+  {
+   "deterministic": true,
+   "loc": 608,
+   "median_ns": 8524009,
+   "mult": 16,
+   "verdict_ok": true
+  }
+ ],
+ "measured": "2026-09-27",
+ "method": "in-process pqblocks_lint.runner.run_instance wall clock (time.perf_counter_ns); golden files 10 runs each; LOC scaling: instance_01 concatenated 1x-16x, 20 runs each (seeds 100-119); median reported"
+}
